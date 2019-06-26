@@ -5,6 +5,9 @@ package com.example.demo.proxy.statics;
  * @Date 2019-06-06 14:14
  * @Description TODO
  */
+
+import com.example.demo.proxy.dynamic.IPerson;
+
 /**
  * 静态代理的弊端
  *

@@ -15,8 +15,6 @@ public class User {
      * 主键ID
      * 对应字段 : id
      */
-//    @Setter
-//    @Getter
     @TableId()
     private Long id;
 

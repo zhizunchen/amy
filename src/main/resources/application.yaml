@@ -8,8 +8,20 @@ mybatis-plus:
   #MyBatis 配置文件位置
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+
   #实体扫描 多个package用逗号或者分号分割
   typeAliasesPackage: com.example.demo.domain
+
+#  configuration:
+#    safe-row-bounds-enabled: false
+#    map-underscore-to-camel-case: false
+#    aggressive-lazy-loading: false
+#    multiple-result-sets-enabled: false
+#    use-generated-keys: false
+#    cache-enabled: false
+#    call-setters-on-nulls: false
+#    return-instance-for-empty-row: false
+
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
     id-type: 2

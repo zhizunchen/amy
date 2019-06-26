@@ -1,5 +1,6 @@
 package com.example.demo.proxy.statics;
 
+import com.example.demo.proxy.dynamic.IPerson;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Date;

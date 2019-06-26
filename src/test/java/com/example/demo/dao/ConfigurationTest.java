@@ -2,8 +2,10 @@ package com.example.demo.dao;
 
 import com.alibaba.fastjson.JSON;
 import com.example.demo.DemoApplication;
+import com.example.demo.autoconfigure.MybatisPlusAutoConfigureUtil;
 import com.example.demo.config.ConnectionPropertiesDomain;
 import com.example.demo.domain.User;
+import com.example.demo.service.ThreadPoolServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -26,15 +28,27 @@ import java.util.stream.Stream;
 @SpringBootTest(classes = DemoApplication.class)
 public class ConfigurationTest {
 
+    private static final ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+
     @Resource
     private ConnectionPropertiesDomain domain;
 
-    private static final ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+    @Resource
+    private MybatisPlusAutoConfigureUtil util;
+
+    @Resource
+    private ThreadPoolServiceImpl threadPoolService;
+
+
 
     @Test
     public void test(){
 
-        System.out.println(domain);
+        System.out.println(util);
+
+//        System.out.println(domain);
+
+//        System.out.println(JSON.toJSON(threadPoolService));
 
     }
 }

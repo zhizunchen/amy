@@ -26,26 +26,32 @@ public class Test {
 //
 //        Stream.of(optional);
 
-        PathMatcher pathMatcher = new AntPathMatcher();
-        System.out.println(pathMatcher.isPattern("classpath:mybatis/mapper/*.xml".substring(10)));
+//        PathMatcher pathMatcher = new AntPathMatcher();
+//        System.out.println(pathMatcher.isPattern("classpath:mybatis/mapper/*.xml".substring(10)));
 
-//        Test test = new Test();
-//        test.testOptional();
+        Test test = new Test();
+        test.testOptional();
+//        System.out.println(test.getClass().getSimpleName());
+
 
     }
 
     private void testOptional(){
-        User user = new User();
-        user.setAge(12);
-        user.setName("chuchu");
-
-        Optional<User> opt = Optional.ofNullable(user);
-        System.out.println(opt.isPresent());
-
-        Integer age = Optional.ofNullable(user)
-                .map(u -> u.getAge())
-                .orElse(0);
-        System.out.println("age======" + age);
+//        User user = new User();
+//        user.setAge(12);
+//        user.setName("chuchu");
+//
+//        Optional<User> opt = Optional.ofNullable(user);
+//        System.out.println(opt.isPresent());
+//
+//        Integer age = Optional.ofNullable(user)
+//                .map(u -> u.getAge())
+//                .orElse(0);
+//        System.out.println("age======" + age);
 
     }
+
+
+
+
 }

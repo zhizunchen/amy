@@ -1,5 +1,7 @@
 package com.example.demo.proxy.statics;
 
+import com.example.demo.proxy.dynamic.IPerson;
+
 /**
  * @Created by chenhe
  * @Date 2019-06-06 11:45

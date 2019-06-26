@@ -11,11 +11,11 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" > <!-- com.example.demo.dao.UserMapper.Base_Column_List -->
     id,name,age,email,deleted,version,create_time,update_time
   </sql>
   <!--selectById -->
-  <select id="selectById">
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
       select
       <include refid="Base_Column_List"/>
       from user

@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.example.demo.DemoApplication;
@@ -13,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @Created by chenhe
@@ -47,13 +49,11 @@ public class UserMapperTest {
             System.out.println(integer);
         });
 
-        System.out.println();
-
-        list.stream()
-            .filter(item -> item.getAge().equals(28))
-            .forEach(item ->{
-              System.out.println(item.getAge());
-            });
+//        list.stream()
+//            .filter(item -> item.getAge().equals(28))
+//            .forEach(item ->{
+//              System.out.println(item.getAge());
+//            });
     }
 
     @Test
@@ -66,20 +66,23 @@ public class UserMapperTest {
 
     @Test
     public void testUpdate(){
-        UpdateWrapper<User> wrapper = new UpdateWrapper<User>()
+        Wrapper<User> wrapper = new UpdateWrapper<User>()
                 .eq("id", 1137994295025885185L);
 
         User user = new User();
         user.setName("testUpdate1");
         user.setVersion(7L);
+
+        user = Optional.ofNullable(user).orElse(new User());
+
         int index = userMapper.update(user, wrapper);
 
         System.out.println("update index = " + index);
 
-        System.out.println(JSON.toJSON(wrapper));
-        System.out.println(wrapper.getSqlSegment());
-        System.out.println(wrapper.getSqlSet());
-        System.out.println(wrapper.getSqlSelect());
+//        System.out.println(JSON.toJSON(wrapper));
+//        System.out.println(wrapper.getSqlSegment());
+//        System.out.println(wrapper.getSqlSet());
+//        System.out.println(wrapper.getSqlSelect());
         System.out.println(JSON.toJSON(userMapper.selectOne(wrapper)));
     }
 

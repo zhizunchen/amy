@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @Created by chenhe
  * @Date 2019-05-30 17:32
@@ -21,9 +24,12 @@ public class HelloController {
     @Value("${const-dev}")
     private String param;
 
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
-    public String test(){
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(HttpServletRequest request, HttpServletResponse response){
 
+        System.out.println(request.getRequestURI());
+        System.out.println(request.getServletPath());
+        System.out.println(request.getServerName());
         // ConfigurableEnvironment
 //        ConfigFileApplicationListener
         log.info("=============");

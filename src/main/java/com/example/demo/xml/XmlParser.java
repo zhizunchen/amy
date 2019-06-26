@@ -36,8 +36,6 @@ import java.util.Properties;
  * XPathConstants.STRING   java.lang.String
  * XPathConstants.NODE
  *
- *
- *
  * Node.ELEMENT_NODE(1)；//元素节点
  *
  * Node.ATTRIBUTE_NODE(2)；//属性节点
@@ -97,12 +95,12 @@ public class XmlParser {
 //        XPathExpression expression = xPath.compile("//CD//TITLE//text()");
 //        Object result = expression.evaluate(document, XPathConstants.NODESET);
 
-//        Object result = xPath.evaluate("//CD//TITLE//text()", document, XPathConstants.NODESET);
-//
-//        NodeList nodeList = (NodeList)result;
-//        for (int i =0; i < nodeList.getLength(); i++){
-//            System.out.println(nodeList.item(i).getNodeValue());
-//        }
+        Object result = xPath.evaluate("//CD//TITLE//text()", document, XPathConstants.NODESET);
+
+        NodeList nodeList = (NodeList)result;
+        for (int i =0; i < nodeList.getLength(); i++){
+            System.out.println(nodeList.item(i).getNodeValue());
+        }
 
 
 //        //
