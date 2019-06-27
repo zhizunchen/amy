@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -17,7 +18,6 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
@@ -35,7 +35,7 @@ public class Generator {
     //作者
     private static String authorName = "chenhe";
     //要生成的表名
-    private static String[] tables = {"user"};
+    private static String[] tables = {"user_desc"};
     //table前缀
     private static String prefix = "";
 
@@ -97,9 +97,9 @@ public class Generator {
                 // 自定义文件命名，注意 %s 会自动填充表实体属性！
                 .setMapperName("%sMapper")
                 .setXmlName("%sMapper")
-                .setServiceName("%sService")
-                .setServiceImplName("%sServiceImpl")
-                .setControllerName("%sController")
+//                .setServiceName("%sService")
+//                .setServiceImplName("%sServiceImpl")
+//                .setControllerName("%sController")
         );
 
         /**
@@ -146,12 +146,12 @@ public class Generator {
         gen.setPackageInfo(new PackageConfig()
                 //.setModuleName("User")
                 .setParent(basePackage)// 自定义包路径
-                .setController("controller")// 这里是控制器包名，默认 web
-                .setEntity("model") // 设置Entity包名，默认entity
-                .setMapper("mapper") // 设置Mapper包名，默认mapper
-                .setService("service") // 设置Service包名，默认service
-                .setServiceImpl("service.impl") // 设置Service Impl包名，默认service.impl
-                .setXml("mapper") // 设置Mapper XML包名，默认mapper.xml
+//                .setController("controller")// 这里是控制器包名，默认 web
+                .setEntity("domain") // 设置Entity包名，默认entity
+                .setMapper("dao") // 设置Mapper包名，默认mapper
+//                .setService("service") // 设置Service包名，默认service
+//                .setServiceImpl("service.impl") // 设置Service Impl包名，默认service.impl
+                .setXml("mybatis/mapper") // 设置Mapper XML包名，默认mapper.xml
         );
 
         /**
@@ -171,7 +171,7 @@ public class Generator {
         fileOutList.add(new FileOutConfig("/templates/mapper.xml.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
-                return canonicalPath + "/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper.xml";
+                return canonicalPath + "/src/main/resources/mybatis/mapper/" + tableInfo.getEntityName() + "Mapper.xml";
             }
         });
         abc.setFileOutConfigList(fileOutList);

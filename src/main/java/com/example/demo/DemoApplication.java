@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @MapperScan("com.example.demo.dao")
-@ImportResource(locations = {"classpath:spring-config-service.xml"})
+//@ImportResource(locations = {"classpath:spring-config-service.xml"})
 @ComponentScan("com.example.demo") //<context:component-scan>
 public class DemoApplication {
 

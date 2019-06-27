@@ -3,6 +3,7 @@ package com.example.demo.config;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.binding.MapperRegistry;
@@ -69,4 +70,12 @@ public class MybatisPlusConfig {
         return interceptor;
     }
 
+    /**
+     * 分页插件
+     * */
+    @Bean
+    public PaginationInterceptor paginationInterceptor(){
+        log.info("初始化分页插件");
+        return new PaginationInterceptor();
+    }
 }

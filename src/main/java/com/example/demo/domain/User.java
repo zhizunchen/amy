@@ -34,6 +34,7 @@ public class User {
      * 邮箱
      * 对应字段 : email
      */
+    @TableId(value = "email")
     private String email;
 
     /**

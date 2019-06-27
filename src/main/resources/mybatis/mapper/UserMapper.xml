@@ -3,9 +3,9 @@
 <mapper namespace="com.example.demo.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.example.demo.domain.User">
     <id column="id" jdbcType="BIGINT" property="id" />
+    <id column="email" jdbcType="VARCHAR" property="email" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age" jdbcType="INTEGER" property="age" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="deleted" jdbcType="INTEGER" property="deleted" />
     <result column="version" jdbcType="BIGINT" property="version" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />

@@ -20,12 +20,9 @@ spring:
       test-on-borrow: false
       test-on-return: false
 
+
+
 const-dev: dev 1
-
-server:
-  port: 8233
-
-
 
 connection:
   userName : admin
@@ -34,3 +31,4 @@ connection:
   config:
     url: 127.0.0.1
     port: 8080
+
