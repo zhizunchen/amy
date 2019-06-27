@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @Date 2019-06-24 15:18
  * @Description  ConditionalOnMissingBean 测试
  */
-
 @Slf4j
 @Configuration
 public class MybatisPlusAutoConfigurationDemo {

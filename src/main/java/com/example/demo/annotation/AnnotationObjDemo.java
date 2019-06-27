@@ -1,9 +1,11 @@
 package com.example.demo.annotation;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.StringUtils;
 import java.lang.reflect.Field;
+import java.util.Optional;
 
 /**
  * @Created by chenhe
@@ -11,19 +13,14 @@ import java.lang.reflect.Field;
  * @Description 应用了注解类的类
  *              使用具体注解的解析
  */
-
+@Data
 public class AnnotationObjDemo {
 
-    @Setter
-    @Getter
     @CustomCheck(required = true, type = "A", digits = 12)
     public String name;
 
-    @Setter
-    @Getter
     @CustomCheck(required = true, type = "N", digits = 3)
     public Integer age;
-
 
     // 解析
     public static void main(String[] args) {
@@ -53,11 +50,11 @@ public class AnnotationObjDemo {
                 //获取制定注解的属性
                 //返回该元素的，如果这样的注释，否则返回null指定类型的注释
                 CustomCheck annotation = (CustomCheck )field.getAnnotations()[0];
-
+                //
                 Boolean required = annotation.required();
-
+                //
                 String type = annotation.type();
-
+                //
                 int digits = annotation.digits();
 
 
@@ -76,7 +73,7 @@ public class AnnotationObjDemo {
                     if(null != object &&(cls.isAssignableFrom(Integer.class) || cls.isAssignableFrom(Long.class))){
                         String regex = "^([0-9]{1," + digits + "})$";
                         if(!String.valueOf(object).matches(regex)){
-                            throw new Exception("参数长度超出制定长度！");
+                            throw new Exception("参数长度不符合指定长度！");
                         }
                     }
                 }else if("A".equals(type)){

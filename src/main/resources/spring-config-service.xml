@@ -10,6 +10,4 @@
         <property name="age" value="12"/>
         <property name="name" value="chenchen"/>
     </bean>
-
-
 </beans>

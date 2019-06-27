@@ -13,6 +13,8 @@ import org.apache.ibatis.binding.MapperProxy;
 import org.apache.ibatis.executor.Executor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.env.PropertiesPropertySourceLoader;
+import org.springframework.boot.env.YamlPropertySourceLoader;
 import org.springframework.core.io.FileSystemResource;
 
 import java.net.URL;
@@ -58,6 +60,9 @@ public class MpGenerator {
         SqlSessionFactoryBean mybatisBean = new SqlSessionFactoryBean();
 //        MybatisPlusAutoConfiguration
 //        FileSystemResource
+        //PropertiesPropertySourceLoader properties", "xml
+
+//        YamlPropertySourceLoader  "yml", "yaml"
     }
 
 }

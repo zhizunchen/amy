@@ -42,19 +42,9 @@ public class PrepareInterceptor implements Interceptor {
 
 
     public void test(){
-//        XMLConfigBuilder
-// XMLConfigBuilder是对mybatis的配置文件进行解析的类，会对myabtis解析后的信息存放在Configuration对象中
-
-//        Executor
-//        StatementHandler
-//        ResultSetHandler
-//        ParameterHandler
-//        Plugin
-//        Interceptor
-//        Invocation
-
-//        DefaultSqlSession
-
+    //        XMLConfigBuilder
+    // XMLConfigBuilder是对mybatis的配置文件进行解析的类，
+    // 会对myabtis解析后的信息存放在Configuration对象中
     }
 
     @Override
@@ -114,10 +104,6 @@ public class PrepareInterceptor implements Interceptor {
         for (Signature signature: sigs) {
             System.out.println(signature.type() + "==" + signature.method() + "==" + signature.args()[0] + "===" + signature.args()[1]);
         }
-
-        //@org.apache.ibatis.plugin.Intercepts(value=[@org.apache.ibatis.plugin.Signature(type=interface org.apache.ibatis.executor.Executor,
-        // method=update, args=[class org.apache.ibatis.mapping.MappedStatement, class java.lang.Object])])
-
     }
 
 }

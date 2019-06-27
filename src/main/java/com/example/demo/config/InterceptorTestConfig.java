@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 public class InterceptorTestConfig {
+
 //  模拟乐观锁 version
 //    @Bean
 //    public MybatisTestInterceptor mybatisTestInterceptor(){

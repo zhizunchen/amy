@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.binding.MapperProxy;
 import org.apache.ibatis.binding.MapperRegistry;
 import org.apache.ibatis.builder.MapperBuilderAssistant;
 import org.apache.ibatis.builder.annotation.MapperAnnotationBuilder;

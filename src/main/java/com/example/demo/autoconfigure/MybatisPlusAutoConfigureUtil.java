@@ -6,9 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @Created by chenhe
  * @Date 2019-06-24 15:24
- * @Description TODO
+ * @Description 测试 @ConditionalOnMissingBean
  */
-
 @Slf4j
 @Data
 public class MybatisPlusAutoConfigureUtil {

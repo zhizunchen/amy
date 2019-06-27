@@ -20,8 +20,12 @@ spring:
       test-on-borrow: false
       test-on-return: false
 
+#web服务启动端口配置
+server:
+  port: 8233
 
 
+#test start
 const-dev: dev 1
 
 connection:
@@ -32,3 +36,4 @@ connection:
     url: 127.0.0.1
     port: 8080
 
+#test end
