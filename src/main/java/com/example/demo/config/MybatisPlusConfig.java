@@ -66,7 +66,7 @@ public class MybatisPlusConfig {
     public PerformanceInterceptor performanceInterceptor() {
         PerformanceInterceptor interceptor = new PerformanceInterceptor();
         interceptor.setFormat(true);  //SQL是否格式化， 默认为false
-        interceptor.setMaxTime(100);  // sql执行最大时长， 超过自动停止运行，
+        interceptor.setMaxTime(1000);  // sql执行最大时长， 超过自动停止运行，
         log.info("初始化SQL执行效率插件");
         return interceptor;
     }

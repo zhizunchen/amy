@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.Version;
@@ -15,7 +16,7 @@ public class User {
      * 主键ID
      * 对应字段 : id
      */
-    @TableId()
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**

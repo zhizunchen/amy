@@ -36,6 +36,14 @@ public class UserMapperTest {
     private UserDescMapper descMapper;
 
     @Test
+    public void test(){
+
+
+
+        System.out.println(userMapper.selectByIds(1L));
+    }
+
+    @Test
     public void testOne(){
 
         QueryWrapper<User> wrapper = new QueryWrapper<User>();
@@ -92,11 +100,13 @@ public class UserMapperTest {
     @Test
     public void testInsert(){
         User user = new User();
-        user.setName("lily1");
+        user.setName("lily2");
         user.setAge(12);
         user.setEmail("11111111");
 
+        System.out.println(user.getId());
         userMapper.insert(user);
+        System.out.println(user.getId());
     }
 
 
@@ -158,6 +168,7 @@ public class UserMapperTest {
         LambdaUpdateWrapper<User> wrapper = new LambdaUpdateWrapper<User>()
                 .eq(User::getId, 1L)
                 .set(User::getName, "lambdatest");
+
 
         int rows = userMapper.update(new User(), wrapper);
         System.out.println("影响行数： " + rows);

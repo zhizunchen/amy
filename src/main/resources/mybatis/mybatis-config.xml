@@ -17,7 +17,7 @@
 
         <setting name="useColumnLabel" value="true"/>
 
-        <setting name="useGeneratedKeys" value="false"/>
+        <setting name="useGeneratedKeys" value="true"/>
 
         <!--指定mybatis应如何自动映射列到字段或属性 -->
         <setting name="autoMappingBehavior" value="PARTIAL"/>

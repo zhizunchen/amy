@@ -5,4 +5,6 @@ import com.example.demo.domain.User;
 
 public interface UserMapper extends BaseMapper<User> {
 
+
+    User selectByIds(Long id);
 }
