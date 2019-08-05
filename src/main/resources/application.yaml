@@ -3,14 +3,17 @@ spring:
   profiles:
     active:
       @env@
+  aop:
+    auto: true #开启aop配置
 
 mybatis-plus:
   #MyBatis 配置文件位置
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
-  #实体扫描 多个package用逗号或者分号分割
+  #实体扫描 多个package用逗号或者分号分割，注册后在Mapper对应的xml文件中可以直接使用类名，不用全限定的类名
   typeAliasesPackage: com.example.demo.domain
 
+#config-location和configuration不能同时存在
 #  configuration:
 #    safe-row-bounds-enabled: false
 #    map-underscore-to-camel-case: false
@@ -23,7 +26,7 @@ mybatis-plus:
 
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
-    id-type: 0
+    id-type: 0  #全局 主键策略 策略配置
     #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
     field-strategy: 2
     #驼峰下划线转换
@@ -44,14 +47,14 @@ mybatis-plus:
     db-config:
       logic-delete-value: 1 #逻辑已删除值
       logic-not-delete-value: 0 #逻辑未删除值
-#  configuration:
-#    environment:
+      field-strategy: NOT_EMPTY
 
 #日志级别  与性能分析插件 PerformanceInterceptor同步打印sql语句
+#logging.level.* =LEVEL   *为包名或Logger名
 logging:
   level:
-    root: warn
-    com.example.demo.dao: trace
+    root: INFO #root 日志以WARN级别输出
+    com.example.demo.dao: trace #com.example.demo.dao 包下所有class以TRACE级别输出
   pattern:
     console: '%p%m%n'
 

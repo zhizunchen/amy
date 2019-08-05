@@ -13,16 +13,14 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * <p>
- * 
- * </p>
- *
  * @author chenhe
  * @since 2019-06-27
+ * AR 测试
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+
 @TableName("user_desc")
 public class UserDesc extends Model<UserDesc> {
 

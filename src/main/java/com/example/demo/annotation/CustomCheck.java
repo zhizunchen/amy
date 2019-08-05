@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 //注释起作用的位置 field,
 // type={Class, interface (including annotation type), or enum declaration}
-@Target({ElementType.FIELD,ElementType.TYPE})
+@Target({ElementType.FIELD,ElementType.TYPE, ElementType.METHOD})
 public @interface CustomCheck {
 
 // 声名了一个配置参数 返回值类型就是参数的类型（返回值类型只能是基本类型 Class，String，enum）

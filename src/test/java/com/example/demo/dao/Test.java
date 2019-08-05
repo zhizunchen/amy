@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import com.alibaba.fastjson.JSON;
 import com.example.demo.domain.User;
+import com.example.demo.interceptor.PrepareInterceptor;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -21,18 +22,14 @@ import java.util.stream.Stream;
 public class Test {
 
     public static void main(String[] args) {
-//       Object optional = Optional.ofNullable(new String[]{"classpath:mybatis/mapper/*.xml"})
-//               .orElse(new String[0]);
-//
-//        Stream.of(optional);
+        try {
+            if(null != Test.class.forName("com.example.demo.dao.UserMapper")){
+                System.out.println("1234567890-");
+            }else{
+                System.out.println("qwertyuiop");
+            }
 
-//        PathMatcher pathMatcher = new AntPathMatcher();
-//        System.out.println(pathMatcher.isPattern("classpath:mybatis/mapper/*.xml".substring(10)));
-
-        Test test = new Test();
-        test.testOptional();
-//        System.out.println(test.getClass().getSimpleName());
-
+        }catch (Exception e){}
 
     }
 

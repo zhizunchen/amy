@@ -1,9 +1,6 @@
 package com.example.demo.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.Version;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +13,7 @@ public class User {
      * 主键ID
      * 对应字段 : id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.AUTO) //插入数据时 不依赖mybatis的算法
     private Long id;
 
     /**
@@ -64,6 +61,12 @@ public class User {
      * 对应字段 : update_time
      */
     private Date updateTime;
+
+    /**
+     * exist 设置字段不对应数据库中字段
+     * */
+    @TableField(exist = false)
+    private String remark;
 
     @Override
     public String toString() {

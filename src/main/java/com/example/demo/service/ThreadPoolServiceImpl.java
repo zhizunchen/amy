@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -13,7 +14,8 @@ import java.util.concurrent.ExecutorService;
 @Service
 public class ThreadPoolServiceImpl {
 
-    @Resource
+//    @Resource
+    @Autowired
     private ExecutorService executorService;
 
 
