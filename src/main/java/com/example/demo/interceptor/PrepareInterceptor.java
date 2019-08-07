@@ -1,15 +1,10 @@
 package com.example.demo.interceptor;
 
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import org.apache.ibatis.builder.xml.XMLConfigBuilder;
 import org.apache.ibatis.executor.Executor;
-import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.*;
-import org.apache.ibatis.session.defaults.DefaultSqlSession;
-
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.Map;

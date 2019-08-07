@@ -38,7 +38,7 @@ public class AnnotationObjDemo {
 
         Class cl = demo.getClass();
 
-        for (Field field : cl.getFields()){
+        for (Field field : cl.getDeclaredFields()){
 
             //获取字段具体值
             Object object = field.get(demo);
@@ -49,7 +49,7 @@ public class AnnotationObjDemo {
             if(bol){
                 //获取制定注解的属性
                 //返回该元素的，如果这样的注释，否则返回null指定类型的注释
-                CustomCheck annotation = (CustomCheck )field.getAnnotations()[0];
+                CustomCheck annotation = field.getAnnotation(CustomCheck.class);
                 //
                 Boolean required = annotation.required();
                 //

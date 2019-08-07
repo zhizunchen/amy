@@ -20,7 +20,6 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-
 @TableName("user_desc")
 public class UserDesc extends Model<UserDesc> {
 

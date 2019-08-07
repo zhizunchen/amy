@@ -44,13 +44,6 @@ public class MybatisPlusConfig {
      * */
     @Bean
     public ISqlInjector sqlInjector(){
-//        new SqlSessionFactoryBean
-//        XMLMapperBuilder
-//        XMLStatementBuilder
-//        MapperBuilderAssistant
-//        MapperRegistry
-//        MapperAnnotationBuilder
-
         log.info("初始化Mybatis逻辑删除");
         return new LogicSqlInjector();
     }

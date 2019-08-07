@@ -26,11 +26,9 @@ public class PersonTest {
 
         //Proxy的newProxyInstance方法来创建代理对象，
         //
-        IPerson person = (IPerson) Proxy.newProxyInstance(
-                                                            handler.getClass().getClassLoader(),
-                                                            person1.getClass().getInterfaces(),
-                                                            handler
-                                                        );
+        IPerson person = (IPerson) Proxy.newProxyInstance(handler.getClass().getClassLoader(),
+                                                          person1.getClass().getInterfaces(),
+                                                          handler);
 
         person.eating();
         person.sleep();
@@ -50,7 +48,7 @@ class DynaProxyHandler implements InvocationHandler{
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Long startTime = System.currentTimeMillis();
         Object result = method.invoke(target, args);
-        System.out.println("=========" + (System.currentTimeMillis() - startTime));
+        System.out.println("执行 method" + method.getName() + "消耗时间=========" + (System.currentTimeMillis() - startTime));
         return result;
     }
 
