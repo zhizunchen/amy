@@ -1,0 +1,8 @@
+XPathParser
+
+
+        private final Document document;
+        private boolean validation;
+        private EntityResolver entityResolver;
+        private Properties variables;
+        private XPath xpath;

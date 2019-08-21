@@ -1,5 +1,7 @@
 package com.example.demo.dao;
 
+import com.alibaba.dubbo.config.ReferenceConfig;
+import com.alibaba.dubbo.config.ServiceConfig;
 import com.alibaba.fastjson.JSON;
 import com.example.demo.domain.User;
 import com.example.demo.interceptor.PrepareInterceptor;

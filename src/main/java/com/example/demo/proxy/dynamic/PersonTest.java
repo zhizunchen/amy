@@ -1,5 +1,6 @@
 package com.example.demo.proxy.dynamic;
 
+import javax.security.auth.Subject;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -26,6 +27,8 @@ public class PersonTest {
 
         //Proxy的newProxyInstance方法来创建代理对象，
         //
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneraedFiles", "true");
+
         IPerson person = (IPerson) Proxy.newProxyInstance(handler.getClass().getClassLoader(),
                                                           person1.getClass().getInterfaces(),
                                                           handler);

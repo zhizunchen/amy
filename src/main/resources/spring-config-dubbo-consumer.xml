@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans         
+						http://www.springframework.org/schema/beans/spring-beans.xsd         
+						http://code.alibabatech.com/schema/dubbo         
+						http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!--应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。-->
+	<dubbo:application name="${spring.dubbo.application.name}" />
+
+	<!-- zk注册中心配置 -->
+	<dubbo:registry address="${spring.dubbo.registry.address}" group="${spring.dubbo.registry.group}"/>
+
+	<dubbo:reference interface="com.le.finance.core.face.Face" id="face" timeout="15000" check="false" group="${id.generator.dubbo.group}" version="${id.generator.dubbo.version}"/>
+
+</beans>

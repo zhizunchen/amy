@@ -6,6 +6,7 @@ package com.example.demo.proxy.dynamic;
  * @Description TODO
  */
 public class Person implements IPerson {
+
     @Override
     public void sleep() {
         System.out.println("==sleep==");

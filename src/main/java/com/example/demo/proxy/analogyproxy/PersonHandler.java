@@ -1,12 +1,14 @@
 package com.example.demo.proxy.analogyproxy;
 
+import org.springframework.aop.framework.DefaultAopProxyFactory;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
  * @Created by chenhe
  * @Date 2019-08-07 14:49
- * @Description TODO
+ * @Description 模拟invocationHandler 方法全部处理
  */
 public class PersonHandler implements InvocationHandler {
 
@@ -31,6 +33,5 @@ public class PersonHandler implements InvocationHandler {
             e.printStackTrace();
         }
         return null;
-
     }
 }

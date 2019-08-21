@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +26,7 @@ class Demo{
     public void test() throws IllegalAccessException{
         System.out.println("========");
         throw new IllegalAccessException("23456789");
+
     }
 
 }

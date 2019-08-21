@@ -4,7 +4,8 @@ spring:
     active:
       @env@
   aop:
-    auto: true #开启aop配置
+    auto: true #开启aop配置  "defaultValue": true,
+    proxy-target-class: false #在 Spring Boot 2.0 中，Spring Boot现在默认使用CGLIB动态代理(基于类的动态代理), 包括AOP. 如果需要基于接口的动态代理(JDK基于接口的动态代理) , 需要设置spring.aop.proxy-target-class属性为false
 
 mybatis-plus:
   #MyBatis 配置文件位置

@@ -19,6 +19,15 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
+#  dubbo:
+#    application:
+#      name: dubbo-provider #当前应用名称 主要用来给 zokeeper 注册中心计算应用间依赖关系
+#    registry:
+#      address: zookeeper://10.58.84.184:2181
+#    protocol:
+#      name: dubbo
+#      port: 20880 #该应用用dubbo协议在20880端口暴露服务 其他应用可以通过这个接口调用服务
+#    scan: com.example.demo.dubboapi   2.0.0 版本未配置 DubboProperties scan属性
 
 #web服务启动端口配置
 server:

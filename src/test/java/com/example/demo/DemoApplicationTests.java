@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 
 @RunWith(SpringRunner.class)
@@ -14,6 +15,12 @@ public class DemoApplicationTests {
 
     @Resource
     private ExecutorService executorService;
+
+
+    @Test
+    public void test(){
+        System.out.println(LocalDateTime.now());
+    }
 
     @Test
     public void testExecutor() {

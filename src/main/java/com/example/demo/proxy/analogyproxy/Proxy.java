@@ -96,5 +96,27 @@ public class Proxy {
 
     }
 
+//    package com.example.demo.proxy.analogyproxy;
+//
+//import java.lang.reflect.Method;
+//
+//    public class $Proxy0 implements Person {
+//        private InvocationHandler handler;
+//
+//        public $Proxy0(InvocationHandler var1) {
+//            this.handler = var1;
+//        }
+//
+//        public String say(String var1) {
+//            try {
+//                Method var2 = Person.class.getMethod("say", String.class);
+//                return (String)this.handler.invoke(this, var2, new Object[]{var1});
+//            } catch (Exception var3) {
+//                var3.printStackTrace();
+//                return null;
+//            }
+//        }
+//    }
+
 }
 
