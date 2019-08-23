@@ -10,7 +10,7 @@ import org.springframework.web.context.ContextLoaderListener;
  * @Description TODO
  */
 @Service
-public class PersonServiceImpl implements PersonService {
+public class PersonServiceImpl implements PersonService,  c{
 
     @Override
     @MyAspectAnnotation
@@ -18,4 +18,16 @@ public class PersonServiceImpl implements PersonService {
 //        com.example.demo.analogschema.PersonServiceImpl$$EnhancerBySpringCGLIB$$3e3d9873
 //        ContextLoaderListener
     }
+
+    public static void main(String[] args) {
+        PersonServiceImpl service = new PersonServiceImpl();
+        Class<?>[] ifcs =   service.getClass().getInterfaces();
+        System.out.println(service.getClass().getSuperclass().getName());
+
+
+        for (Class c : ifcs) {
+            System.out.println(c.getName());
+        }
+    }
 }
+interface c{}
