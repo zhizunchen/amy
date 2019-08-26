@@ -59,6 +59,5 @@ logging:
   pattern:
     console: '%p%m%n'
 
-
 server:
   port: 8233

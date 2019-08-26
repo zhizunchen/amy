@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.annotation.CustomCheck;
-import com.example.demo.annotation.MyAspectAnnotation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.config.ConfigFileApplicationListener;
@@ -17,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  * @Date 2019-05-30 17:32
  * @Description
  *
- * 、@Controller + @ResponseBody = @RestController  该注解的类方法都以json格式输出
+ * 、@Controller + @ResponseBody = @RestController
+ * @RestController //标注是一个Controller类 并且支持json数据格式输出
  */
 @Slf4j
 @RestController
@@ -27,9 +26,6 @@ public class HelloController {
     @Value("${const-dev}")
     private String param;
 
-
-
-    @MyAspectAnnotation
     @RequestMapping(value = "/test", method = RequestMethod.GET)
 //    @GetMapping  get
 //    @PostMapping  post

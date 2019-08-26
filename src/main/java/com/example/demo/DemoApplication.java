@@ -23,6 +23,8 @@ import org.springframework.context.annotation.ImportResource;
 @EnableDubboConfiguration
 //@ImportResource(locations = {"classpath:spring-config-service.xml"})
 //@EnableAspectJAutoProxy(proxyTargetClass = true)  主动设置 使用cglib 动态代理
+//@ImportResource(locations = {"classpath:spring-config-service.xml"})
+@ComponentScan("com.example.demo") //<context:component-scan>
 public class DemoApplication {
 
     public static void main(String[] args) {

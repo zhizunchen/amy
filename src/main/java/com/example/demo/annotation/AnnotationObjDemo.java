@@ -71,7 +71,7 @@ public class AnnotationObjDemo {
                 if("N".equals(type)){
                     Class cls = field.getType();
                     if(null != object &&(cls.isAssignableFrom(Integer.class) || cls.isAssignableFrom(Long.class))){
-                        String regex = "^([0-9]{1," + digits + "})$";
+                        String regex = "^([0-9]{1, " + digits + "})$";
                         if(!String.valueOf(object).matches(regex)){
                             throw new Exception("参数长度不符合指定长度！");
                         }

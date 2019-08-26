@@ -38,21 +38,38 @@ public class UserMapperTest {
 
     @Test
     public void test(){
-       userMapper.selectAll(new QueryWrapper<User>().like("name", "lily")).forEach(System.out::println);
+
+
+
+        System.out.println(userMapper.selectByIds(1L));
     }
 
     @Test
     public void testOne(){
-        // Wrapper 直接传递对象 以非空值设置
-        User user = new User();
-        user.setName("lily2");
-        user.setAge(null);
 
-        QueryWrapper<User> wrapper = new QueryWrapper<User>(user);
-//                .eq("name", "'lily2' or true or true");
+        QueryWrapper<User> wrapper = new QueryWrapper<User>();
         List<User> list = userMapper.selectList(wrapper);
-        list.forEach(item -> System.out.println(item));
 
+//        SELECT
+//                id,
+//                name,
+//                age,
+//                email,
+//                deleted
+//        FROM
+//                user
+//        WHERE
+//                deleted=0
+
+        list.forEach(integer ->{
+            System.out.println(integer);
+        });
+
+//        list.stream()
+//            .filter(item -> item.getAge().equals(28))
+//            .forEach(item ->{
+//              System.out.println(item.getAge());
+//            });
     }
 
     @Test
@@ -60,6 +77,7 @@ public class UserMapperTest {
         QueryWrapper<User> wrapper = new QueryWrapper<User>()
                 .eq("id", 1);
         userMapper.delete(wrapper);
+
     }
 
     @Test
@@ -85,7 +103,7 @@ public class UserMapperTest {
         User user = new User();
         user.setName("lily2");
         user.setAge(12);
-        user.setEmail("20190730");
+        user.setEmail("11111111");
 
         System.out.println(user.getId());
         userMapper.insert(user);
@@ -96,16 +114,16 @@ public class UserMapperTest {
     @Test
     public void testLambda(){
         LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<User>()
-//                .select(User::getName, null);
-                .in(true, User::getId, 1,2)
-                .orderByAsc(User::getCreateTime);
-        System.out.println(userMapper.selectOne(wrapper));
+                .eq(User::getAge, 12)
+                .select(User::getName, null);
+
     }
 
     @Test
     public void testTableId(){
 
         System.out.println(descMapper.selectById(1L));
+
     }
 
     @Test
@@ -134,21 +152,20 @@ public class UserMapperTest {
 
         System.out.println(page.getTotal());
         ipage.getRecords().forEach(user -> System.out.println(user));
+
     }
 
     @Test
     public void updateById(){
         User user = new User();
         user.setId(1L);
-        user.setName("");
+        user.setName("updateById");
         int rows = userMapper.updateById(user);
         System.out.println("影响行数： " + rows);
     }
 
     @Test
     public void updateByWrapper(){
-
-        //更新对象少量字段 可使用wrapper set方法
         LambdaUpdateWrapper<User> wrapper = new LambdaUpdateWrapper<User>()
                 .eq(User::getId, 1L)
                 .set(User::getName, "lambdatest");
@@ -161,11 +178,8 @@ public class UserMapperTest {
     @Test
     public void testAR(){
         UserDesc desc = new UserDesc();
-        desc.setUserId(2L);
-        desc.setDescs("");
-//        System.out.println(desc.insert());
-        System.out.println(desc.updateById());
-
+        desc.setUserId(1L);
+        desc.insert();
     }
 
 

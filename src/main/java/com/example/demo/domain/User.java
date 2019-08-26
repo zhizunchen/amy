@@ -13,7 +13,7 @@ public class User {
      * 主键ID
      * 对应字段 : id
      */
-    @TableId(type = IdType.AUTO) //插入数据时 不依赖mybatis的算法
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**

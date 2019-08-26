@@ -22,7 +22,7 @@
     </properties>
 
     <dependencies>
-        <!-- springboot start-->
+        <!-- springboot 启动器 start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -66,6 +66,11 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.16</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.12</version>
+        </dependency>
         <!-- druid 连接池 end-->
 
         <!-- 驱动 start-->
@@ -77,11 +82,13 @@
         </dependency>
         <!-- 驱动 start-->
 
+        <!--slf4j start -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.20</version>
         </dependency>
+        <!--slf4j end -->
 
         <!-- json start -->
         <dependency>
@@ -144,8 +151,6 @@
             <version>2.1_3</version>
         </dependency>
 
-
-        <!-- aop end -->
     </dependencies>
 
     <!-- 环境配置 start-->
