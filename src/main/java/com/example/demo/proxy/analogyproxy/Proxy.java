@@ -9,6 +9,9 @@ import javax.tools.ToolProvider;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Created by chenhe
@@ -25,19 +28,23 @@ public class Proxy {
         //文件拼接
         for (Method method : cls.getMethods()){
             String paraStr = "";
+            List<String> paraStrArr = new ArrayList<>();
             String paraObj = "";
             String paramStr = "";
+            List<String> paramStrArr = new ArrayList<>();
             methodStr += " public " + method.getReturnType().getSimpleName() + space + method.getName() + space + "(" ;
             Class<?>[] clsarr = method.getParameterTypes();
             for (int i = 0; i < clsarr.length; i++) {
                 Class paramClass = clsarr[i];
-                paramStr += "," + paramClass.getSimpleName() + " args" + i ;
-                paraStr += ",args" + i ;
+                paramStrArr.add(paramClass.getSimpleName() + " args" + i );
+                paraStrArr.add("args" + i );
                 paraObj += paramClass.getSimpleName() + ".class";
             }
 
-            paraStr = paraStr.isEmpty()? paraStr : paraStr.substring(1);
-            paramStr = paramStr.isEmpty()? paramStr : paramStr.substring(1);
+//            paraStr = paraStr.isEmpty()? paraStr : paraStr.substring(1);
+//            paramStr = paramStr.isEmpty()? paramStr : paramStr.substring(1);
+            paraStr = paraStrArr.stream().collect(Collectors.joining(","));
+            paramStr = paramStrArr.stream().collect(Collectors.joining(","));
 
             methodStr = methodStr + paramStr + ") {" + rt +
                     "  try{" + rt +

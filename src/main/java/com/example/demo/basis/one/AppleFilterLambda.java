@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * @Created by chenhe
  * @Date 2019-08-22 10:32
- * @Description TODO
+ * @Description lambda 行为参数化
  */
 public class AppleFilterLambda {
 
@@ -21,15 +21,12 @@ public class AppleFilterLambda {
         list.add(apple1);
         list.add(apple2);
 
-//
 //        newList.sort(new Comparator<Apple>() {
 //            @Override
 //            public int compare(Apple o1, Apple o2) {
 //                return o1.getWeight().compareTo(o2.getWeight());
 //            }
 //        });
-//
-//
 //        newList.sort((Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight())
 
 
@@ -46,8 +43,6 @@ public class AppleFilterLambda {
 
         System.out.println(list);
         System.out.println(newList);
-
-
 
     }
 
