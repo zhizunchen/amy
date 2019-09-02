@@ -7,8 +7,13 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Created by chenhe
@@ -34,10 +39,41 @@ public class HelloController {
         System.out.println(request.getRequestURI());
         System.out.println(request.getServletPath());
         System.out.println(request.getServerName());
+
+
         // ConfigurableEnvironment
 //        ConfigFileApplicationListener
         log.info("=============");
         return "hello world " + param;
+    }
+
+    //获取cookie
+    private void getCookies(HttpServletRequest request, HttpServletResponse response){
+        //1
+        String name = "name";
+        Cookie[] cookies = request.getCookies();
+        if (null != cookies){
+            for (int i = 0; i< cookies.length; i++){
+                Cookie cookie = cookies[i];
+                if(name.equals(cookie.getName())){
+                    cookie.getValue();
+                }
+            }
+        }
+        //2
+        List<Cookie> list = new ArrayList(Arrays.asList(cookies));
+        list.stream()
+                .filter(item->"name".equals(item.getName()))
+                .map(item->item.getValue())
+                .collect(Collectors.toList());
+    }
+    //设置cookie
+    public void setCookie(HttpServletRequest request, HttpServletResponse response){
+        Cookie c = new Cookie("name", "value");
+        c.setMaxAge(60*60*24);
+        c.setDomain("chenhe.com");
+        c.setPath("/");
+        response.addCookie(c);
     }
 
 }

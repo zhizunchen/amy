@@ -1,8 +1,6 @@
 package com.example.demo.collectionbasic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -11,15 +9,7 @@ import java.util.stream.Collectors;
  * @Description list 操作相关
  */
 public class ListTest {
-
-
-    public static void main(String[] args) {
-//        asListTest();
-//        testBasicDataType();
-
-        testArrToList();
-    }
-//数组转list
+    //数组转list
     public static void asListTest(){
         String[] myArray = { "Apple", "Banana", "Orange" };
 
@@ -47,9 +37,12 @@ public class ListTest {
     }
      public static void testArrToList(){
          String[] myArray = { "Apple", "Banana", "Orange" };
+
+         // 1
          List<String> list = Arrays.asList(myArray);
          List newList1 = list.stream().collect(Collectors.toList());
 
+         // 2
          //or
          List newList2 = new ArrayList(Arrays.asList(myArray));
          System.out.println(newList1.add(1));
@@ -57,7 +50,7 @@ public class ListTest {
 
      }
 
-//List转数组
+    //List转数组
     public static void testOne(){
         ArrayList<String> list = new ArrayList<String>();
         list.add("1111");
@@ -66,4 +59,61 @@ public class ListTest {
 
         list.toArray(new String[0]);
     }
+    public static void main(String[] args) {
+//        asListTest();
+//        testBasicDataType();
+//        testArrToList();
+
+//        Vector
+        ArrayList arr = new ArrayList();
+        LinkedList linked = new LinkedList();
+        Iterator it = linked.iterator();
+        it.next();
+//        linked.add("12345678");
+
+        Object[] elementData = new Object[2];
+        System.out.println(elementData.length);
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
