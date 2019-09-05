@@ -1,6 +1,7 @@
 package com.example.demo.collectionbasic;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -63,19 +64,71 @@ public class ListTest {
 //        asListTest();
 //        testBasicDataType();
 //        testArrToList();
+        String key = "fg1jkl2345678";
+        int h ;
+        h = (h = key.hashCode());// ^ (h >>> 16);
+        System.out.println("=========" + h);
 
-//        Vector
+        System.out.println(h&15);
+    }
+
+    public void nextDemo(){
+        Object[] elementData = new Object[10];
+
+        int last = 0;
+        int next = 0;
+///
+        int i = next;
+        next = i + 1;
+
+        Object object = elementData[last = i];
+
+        ArrayList list = new ArrayList(Arrays.asList(elementData));
+
+
+
+
+
+    }
+
+    public void test(){
+        // Vector
         ArrayList arr = new ArrayList();
         LinkedList linked = new LinkedList();
-        Iterator it = linked.iterator();
-        it.next();
-//        linked.add("12345678");
 
         Object[] elementData = new Object[2];
         System.out.println(elementData.length);
 
-    }
+//        TreeSet
+        Set set = new LinkedHashSet();
+        set.add("123");
+        set.iterator();
 
+        HashSet<String> set1 = new HashSet<String>();
+
+        set1.add("1111111");
+        set1.add("2222222");
+        set1.add("3333333");
+        set1.add("4444444");
+        set1.add("5555555");
+        set1.add("6666666");
+        for (String s: set1) {
+
+        }
+        Iterator<String> it = set1.iterator();
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+        set1.stream()
+                .forEach(item-> System.out.println(item));
+
+        HashMap<String, String> map = new HashMap<>();
+        map.get("123456789");
+
+//        ConcurrentHashMap;
+
+
+    }
 }
 
 

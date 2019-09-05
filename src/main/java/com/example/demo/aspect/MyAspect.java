@@ -3,11 +3,11 @@ package com.example.demo.aspect;
 import com.example.demo.annotation.CustomCheck;
 import com.example.demo.annotation.MyAspectAnnotation;
 import lombok.extern.slf4j.Slf4j;
+import org.aopalliance.intercept.MethodInterceptor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.context.config.ContextNamespaceHandler;
 import org.springframework.stereotype.Component;
 
 /**
@@ -35,6 +35,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyAspect {
 
+    //MethodInterceptor
     @Around(value = "@annotation(myAspectAnnotation)", argNames="joinPoint,myAspectAnnotation")
     public  Object around(ProceedingJoinPoint joinPoint, MyAspectAnnotation myAspectAnnotation) {
         Object obj = null;
