@@ -1,5 +1,8 @@
 package com.example.demo.collectionbasic;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @Author chenhe
  * @Date 2019/9/4 14:23
@@ -7,19 +10,28 @@ package com.example.demo.collectionbasic;
  */
 public class ThreadLocalDemo {
 
-    static ThreadLocal local = new ThreadLocal();
-
     public static void main(String[] args) {
-        Thread thread = new Thread();
+
     }
-
-
 }
 class ThreadDemo implements Runnable{
 
+    private ThreadLocal local;
+
+    public ThreadDemo(ThreadLocal local) {
+        this.local = local;
+        local.get();
+        local.set("qwertyu");
+    }
+
     @Override
     public void run() {
-
+        System.out.println(local.get().hashCode());
     }
 }
+
+
+
+
+
 
